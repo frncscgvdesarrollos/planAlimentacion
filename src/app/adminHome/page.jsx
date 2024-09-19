@@ -2,12 +2,14 @@
 import { useState, useEffect } from 'react';
 import { getPlanes, createPlan, updatePlan, deletePlan, getPacientes, asignarPlanPaciente } from '../firebase';
 
-export default function AdminHome() {
+export default function adminHome() {
   const [plans, setPlans] = useState([]);
   const [patients, setPatients] = useState([]);
   const [showPlanForm, setShowPlanForm] = useState(false);
   const [newPlan, setNewPlan] = useState({ name: '', description: '' });
   const [selectedPlan, setSelectedPlan] = useState(null);
+  const [isMenuCollapsed, setIsMenuCollapsed] = useState(false);
+  const [activeSection, setActiveSection] = useState('pacientes');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -65,14 +67,34 @@ export default function AdminHome() {
   };
 
   return (
-    <main className="flex flex-col min-h-screen py-6 ">
-      <div className="container mx-auto p-4">
-        <h1 className="text-4xl font-bold mb-4 text-center">Panel de Administración</h1>
+    <main className="flex flex-col lg:flex-row min-h-screen py-6">
+      <aside className={`bg-cyan-600 dark:bg-gray-900 bg-opacity-90 ${isMenuCollapsed ? 'w-16' : 'w-1/4'} h-screen p-4 transition-width duration-300`}>
+        <div className='flex flex-col h-full'>
+          <button onClick={() => setIsMenuCollapsed(!isMenuCollapsed)} className='text-white ml-auto mr-2 text-xl mb-6'>
+            {isMenuCollapsed ? '▷' : '◁'}
+          </button>
+          <div className='mb-6'>
+            <h2 className={`text-white text-2xl font-semibold mb-2 ${isMenuCollapsed ? 'hidden' : ''}`}>Menú</h2>
+          </div>
+          <ul className={`flex flex-col space-y-2 ${isMenuCollapsed ? 'hidden' : ''}`}>
+            <li className='p-3 text-white text-lg bg-cyan-700 dark:bg-gray-800 rounded-md hover:bg-cyan-800 dark:hover:bg-gray-700 transition-colors'>
+              <button onClick={() => setActiveSection('pacientes')} className='block w-full text-left'>
+                Pacientes
+              </button>
+            </li>
+            <li className='p-3 text-white text-lg bg-cyan-700 dark:bg-gray-800 rounded-md hover:bg-cyan-800 dark:hover:bg-gray-700 transition-colors'>
+              <button onClick={() => setActiveSection('planes')} className='block w-full text-left'>
+                Planes de Alimentación
+              </button>
+            </li>
+          </ul>
+        </div>
+      </aside>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Sección de Pacientes */}
-          <section className="col-span-1 md:col-span-2  p-4 shadow-lg rounded-lg">
-            <h2 className="text-2xl font-semibold mb-4">Pacientes</h2>
+      <div className="flex-1 p-4 bg-cyan-100 dark:bg-gray-800">
+        {activeSection === 'pacientes' && (
+          <section>
+            <h1 className="text-4xl font-bold mb-4">Pacientes</h1>
             <div className="overflow-x-auto">
               <table className="min-w-full bg-white border border-gray-300 rounded-lg shadow-md">
                 <thead className="bg-gray-100 border-b border-gray-300">
@@ -111,10 +133,11 @@ export default function AdminHome() {
               </table>
             </div>
           </section>
+        )}
 
-          {/* Sección de Planes */}
-          <aside className="col-span-1 bg-white p-4 shadow-lg rounded-lg">
-            <h2 className="text-2xl font-semibold mb-4">Planes de Alimentación</h2>
+        {activeSection === 'planes' && (
+          <section>
+            <h1 className="text-4xl font-bold mb-4">Planes de Alimentación</h1>
             <button
               className="bg-green-600 rounded-lg p-2 text-white font-bold mb-4 w-full"
               onClick={() => setShowPlanForm(true)}
@@ -178,8 +201,8 @@ export default function AdminHome() {
                 </li>
               ))}
             </ul>
-          </aside>
-        </div>
+          </section>
+        )}
       </div>
     </main>
   );

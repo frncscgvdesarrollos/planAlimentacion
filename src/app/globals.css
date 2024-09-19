@@ -9,7 +9,7 @@
   --background: #ffffff; /* Fondo claro por defecto */
   --foreground: #000000; /* Texto oscuro por defecto */
   /* Variables para el tema oscuro */
-  --background-color-dark: #1a1b1b; /* Tomorrow Night Blue */
+  --background-color-dark: #4144cb; /* Tomorrow Night Blue */
   --text-color-dark: #cd3d3d; /* Texto blanco */
   
   /* Tipografía */
@@ -18,7 +18,7 @@
 }
 .dark-mode {
   --background: #1a202c; /* Fondo oscuro */
-  --foreground: #f7fafc; /* Texto claro */
+  --foreground: #2e7aac; /* Texto claro */
 }
 /* Estilos generales */
 body {
@@ -33,7 +33,7 @@ main{
 
 .dark-mode {
   background-color: #1a202c; /* Dark background color */
-  color: #e2e8f0; /* Light text color */
+  color: #205eae; /* Light text color */
 }
 
 /* Tema claro por defecto */
