@@ -65,6 +65,10 @@ export default function PatientHome() {
       <div className="flex flex-col items-center max-w-[90vw] mx-auto p-4 bg-white shadow-lg rounded-lg">
         <h1 className="text-4xl font-bold mb-4">Bienvenido, {patientName}</h1>
         <p className="text-lg mb-6">Aquí está tu plan de alimentación para este mes:</p>
+        <div className="mt-12 text-center text-sm text-gray-600">
+          <h2 className="text-xl font-semibold mb-4">Descripción del Plan de Alimentación</h2>
+          <p>{nutritionPlan.description}</p>
+        </div>
         
         <div className="overflow-x-auto w-full">
           <table className="min-w-full divide-y divide-gray-200">
@@ -78,7 +82,7 @@ export default function PatientHome() {
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
-              {daysInMonth.map(day => {
+              {/* {daysInMonth.map(day => {
                 const dateString = day.toISOString().split('T')[0];
                 const dailyPlan = nutritionPlan[dateString] || {};
                 const { breakfast, lunch, snack, dinner } = dailyPlan;
@@ -91,23 +95,13 @@ export default function PatientHome() {
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{dinner || 'No disponible'}</td>
                   </tr>
                 );
-              })}
+              })} */}
             </tbody>
           </table>
         </div>
 
-        <div className="mt-8 flex flex-col gap-4">
-          <button className="bg-blue-600 rounded-lg p-4 text-xl text-white font-bold hover:bg-blue-700 transition-colors">
-            Ver Más Detalles
-          </button>
-          <button className="bg-green-600 rounded-lg p-4 text-xl text-white font-bold hover:bg-green-700 transition-colors">
-            Contactar a Nutricionista
-          </button>
-        </div>
 
-        <div className="text-center text-sm text-gray-600 mt-6">
-          <p>Para más detalles, visita nuestro <a href="/faq" className="text-blue-500 hover:underline">FAQ</a> o <a href="/support" className="text-blue-500 hover:underline">soporte</a>.</p>
-        </div>
+
 
         <div className="mt-12 text-center text-sm text-gray-600">
           <h2 className="text-xl font-semibold mb-4">Descripción del Plan de Alimentación</h2>
