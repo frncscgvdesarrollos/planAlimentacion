@@ -61,8 +61,8 @@ export default function PatientHome() {
   const daysInMonth = generateDaysInMonth(9, 2024); // Octubre 2024 como ejemplo
 
   return (
-    <main className="flex flex-col items-center min-h-screen py-6 bg-gray-50">
-      <div className="flex flex-col items-center max-w-[90vw] mx-auto p-4 bg-white shadow-lg rounded-lg">
+    <main className="flex flex-col items-center min-h-screen py-6">
+      <div className="flex flex-col items-center max-w-[90vw] mx-auto p-4 shadow-lg rounded-lg">
         <h1 className="text-4xl font-bold mb-4">Bienvenido, {patientName}</h1>
         <p className="text-lg mb-6">Aquí está tu plan de alimentación para este mes:</p>
         <div className="mt-12 text-center text-sm text-gray-600">

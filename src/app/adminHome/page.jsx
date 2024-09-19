@@ -65,13 +65,13 @@ export default function AdminHome() {
   };
 
   return (
-    <main className="flex flex-col min-h-screen py-6 bg-gray-50">
+    <main className="flex flex-col min-h-screen py-6 ">
       <div className="container mx-auto p-4">
         <h1 className="text-4xl font-bold mb-4 text-center">Panel de Administración</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Sección de Pacientes */}
-          <section className="col-span-1 md:col-span-2 bg-white p-4 shadow-lg rounded-lg">
+          <section className="col-span-1 md:col-span-2  p-4 shadow-lg rounded-lg">
             <h2 className="text-2xl font-semibold mb-4">Pacientes</h2>
             <div className="overflow-x-auto">
               <table className="min-w-full bg-white border border-gray-300 rounded-lg shadow-md">

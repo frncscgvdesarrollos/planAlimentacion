@@ -18,9 +18,9 @@ export default function Home() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen py-6 bg-gray-50">
+    <main className="flex flex-col items-center justify-center min-h-screen py-6 ">
       <h1 className="text-3xl font-bold mb-4">Plan de Alimentación</h1>
-      <div className="flex flex-col items-center max-w-md mx-auto p-4 bg-white shadow-lg rounded-lg">
+      <div className="flex flex-col items-center max-w-md mx-auto p-4  shadow-lg rounded-lg">
         <p className="text-lg mb-6">Inicie sesión para poder acceder a su plan de alimentación</p>
         <button 
           onClick={handleLogin} 

@@ -1,6 +1,8 @@
+// app/layout.js
 import localFont from "next/font/local";
 import "./globals.css";
 import { AuthContextProvider } from './context/AuthContext';
+import ThemeToggleButton from "./components/ThemeToggleButton";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -21,9 +23,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <ThemeToggleButton/>
         <AuthContextProvider>
-            {children}
+          {children}
         </AuthContextProvider>
       </body>
     </html>
