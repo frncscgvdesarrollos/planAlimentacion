@@ -4,13 +4,13 @@ import { getFirestore, collection, addDoc, doc, updateDoc, deleteDoc, getDoc, ge
 
 // Configuración de Firebase
 const firebaseConfig = {
-    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-    measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
+    apiKey: "AIzaSyB39q600upZb6cMLUQzvoo42VCEwhzyKHg",
+    authDomain: "superbro-dacc0.firebaseapp.com",
+    projectId: "superbro-dacc0",
+    storageBucket: "superbro-dacc0.appspot.com",
+    messagingSenderId: "216907553403",
+    appId: "1:216907553403:web:3fe5a867ee2e07f0f3e0de",
+    measurementId: "G-HTB583DSH4"
   };
   
 
