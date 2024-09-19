@@ -1,4 +1,3 @@
-// src/app/components/ThemeToggleButton.jsx
 'use client';
 
 import { useEffect } from 'react';
@@ -8,7 +7,6 @@ export default function ThemeToggleButton() {
     const button = document.getElementById('toggle-theme');
     const darkModeClass = 'dark-mode';
 
-    // Aplicar el tema almacenado en localStorage
     if (localStorage.getItem('theme') === 'dark') {
       document.body.classList.add(darkModeClass);
     }
@@ -30,8 +28,12 @@ export default function ThemeToggleButton() {
   }, []);
 
   return (
-    <button id="toggle-theme" className="bg-cyan-600 p-2 rounded-lg text-white">
-      Cambiar Tema
+    <button 
+      id="toggle-theme" 
+      className="fixed top-4 right-4 bg-cyan-600 p-2 rounded-full text-white shadow-lg hover:bg-cyan-700 transition-colors">
+      {/* Usa emojis para representar el sol y la luna */}
+      <span className="dark:hidden">🌞</span>
+      <span className="hidden dark:block">🌜</span>
     </button>
   );
 }

@@ -34,7 +34,7 @@ export default function PatientHome() {
 
         if(!pacienteData) {
             window.location.href = "/register";
-          }
+        }
 
         const fetchedPlan = await getPlan(pacienteData?.planAlimentacion);
         if (fetchedPlan) {
@@ -65,10 +65,6 @@ export default function PatientHome() {
       <div className="flex flex-col items-center max-w-[90vw] mx-auto p-4 shadow-lg rounded-lg">
         <h1 className="text-4xl font-bold mb-4">Bienvenido, {patientName}</h1>
         <p className="text-lg mb-6">Aquí está tu plan de alimentación para este mes:</p>
-        <div className="mt-12 text-center text-sm text-gray-600">
-          <h2 className="text-xl font-semibold mb-4">Descripción del Plan de Alimentación</h2>
-          <p>{nutritionPlan.description}</p>
-        </div>
         
         <div className="overflow-x-auto w-full">
           <table className="min-w-full divide-y divide-gray-200">
@@ -100,9 +96,6 @@ export default function PatientHome() {
           </table>
         </div>
 
-
-
-
         <div className="mt-12 text-center text-sm text-gray-600">
           <h2 className="text-xl font-semibold mb-4">Descripción del Plan de Alimentación</h2>
           <p>{nutritionPlan.description}</p>
@@ -111,3 +104,4 @@ export default function PatientHome() {
     </main>
   );
 }
+

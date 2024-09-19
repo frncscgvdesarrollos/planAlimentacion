@@ -2,25 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-:/* globals.css */
+/* globals.css */
 
 /* Variables de color para el tema claro */
 :root {
-  --background-color-light: #e0f7fa; /* Celeste claro */
-  --text-color-light: #000000; /* Texto oscuro */
-  
+  --background: #ffffff; /* Fondo claro por defecto */
+  --foreground: #000000; /* Texto oscuro por defecto */
   /* Variables para el tema oscuro */
-  --background-color-dark: #002b36; /* Tomorrow Night Blue */
-  --text-color-dark: #ffffff; /* Texto blanco */
+  --background-color-dark: #1a1b1b; /* Tomorrow Night Blue */
+  --text-color-dark: #cd3d3d; /* Texto blanco */
   
   /* Tipografía */
   --font-geist-sans: var(--font-geist-sans);
   --font-geist-mono: var(--font-geist-mono);
 }
-
+.dark-mode {
+  --background: #1a202c; /* Fondo oscuro */
+  --foreground: #f7fafc; /* Texto claro */
+}
 /* Estilos generales */
 body {
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+main{
+  background-image: url('../../public/Designer\ \(17\).png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .dark-mode {

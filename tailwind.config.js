@@ -15,3 +15,5 @@ module.exports = {
   },
   plugins: [],
 };
+// tailwind.config.js
+
